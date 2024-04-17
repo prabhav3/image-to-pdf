@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to PDF</title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/index.css" />
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href='/'>Image to PDF Converter</a></h1>
+        </header>
+        <article>
+            <p class='description'>Easily convert your png and jpg images</p>
+            <form method='post' action='/upload' enctype="multipart/form-data">
+                <p><input id='file-upload' type='file' name='images' accept='.png, .jpg' multiple /></p>
+                <p>
+                    <label for='file-upload'>Select Files</label>
+                </p>
+                <p id='selected-files'><code></code></p>
+                <p><input type='submit' value='Upload' /></p>
+            </form>
+        </article>
+        <footer>
+            <p><code>Copyright &copy; Image to PDF Converter 2024</code></p>
+        </footer>
+        <script>
+            let fileUpload = document.getElementById("file-upload");
+            let selectedFiles = document.querySelector("#selected-files code");
+            let submitButton = document.querySelector("input[type=submit]");
+            let fileNames = ""
+
+            fileUpload.onchange = function() {
+                fileNames = ""
+                for(let file of this.files) {
+                    fileNames += file.name;
+                    fileNames += ",";
+                };
+            }
+
+            selectedFiles.parentElement.style.display = "block";
+            selectedFiles.textContent = fileNames;
+            submitButton.style.display = "inline-block"
+        </script>
+    </main>
+</body>
+</html>
