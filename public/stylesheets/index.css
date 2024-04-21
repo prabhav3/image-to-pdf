@@ -1,0 +1,59 @@
+p.description {
+    font-size: 2.5rem;
+}
+
+p#selected-files {
+    display: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+label {
+    display: inline-block;
+    font-size: 1.75rem;
+    cursor: pointer;
+    padding: 5px 45px;
+    border-radius: 25px;
+    transition: all 0.2s ease;
+}
+
+label:hover {
+  background-color: #e8eaed;
+}
+
+input[type=file] {
+    display: none;
+}
+
+input[type=submit] {
+    display: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 5px 25px;
+    border-radius: 25px;
+    border: none;
+    background: #e8eaed;
+}
+
+@media screen and (max-width: 380px) {
+    p.description {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    p.description {
+        font-size: 1.5rem;
+    }
+
+    label {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    label {
+        padding: 5px 35px;
+    }
+}
